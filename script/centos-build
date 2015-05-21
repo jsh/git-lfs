@@ -19,7 +19,7 @@ git lfs init
 
 # I don't know how to install ruby2.0 on CentOS6 yet
 if grep -q ' 7' /etc/redhat-release; then
-  yum install ruby ruby-devel
+  yum install -y ruby ruby-devel
   gem install ronn
   ./script/man
   install -D man/*.1 /usr/local/share/man/man1
