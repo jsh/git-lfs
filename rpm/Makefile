@@ -1,3 +1,6 @@
+# A makefile for the specfile to use, when building the git-lfs-package.
+#
+
 SHELL := /bin/bash
 
 check: git-lfs
@@ -5,7 +8,7 @@ check: git-lfs
 
 git-lfs:
 	./script/bootstrap
-	./git-lfs init
+	#./bin/git-lfs init
 
 install: git-lfs man
 	install -D bin/git-lfs ${RPM_BUILD_ROOT}/usr/bin/git-lfs

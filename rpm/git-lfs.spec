@@ -47,4 +47,7 @@ script/test
 
 %doc LICENSE README.md
 
+%changelog
+* Mon May 25 2015 Jeffrey S. Haemer <jeffrey.haemer@gmail.com> - 0.5.1-1
+- Initial RPM release
 
