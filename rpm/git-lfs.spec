@@ -1,11 +1,14 @@
+# keep rpm from whining
+%define debug_package %{nil}
+
 Name:           git-lfs
 Version:        0.5.1
 Release:        1%{?dist}
 Summary:        Git LFS is a command line extension and specification for managing large files with Git.
 
 License:        MIT
-URL:            https://github.com/jsh/git-lfs
-Source0:        %{name}-%{version}.tar.gz
+URL:            https://github.com/jsh/%{name}
+Source0:        https://github.com/jsh/%{name}/archive/%{version}.tar.gz
 
 BuildRequires:  bison
 BuildRequires:  git
@@ -25,7 +28,6 @@ slowing down repository operations and making fetches unwieldy.
 Git LFS overcomes this limitation by storing the metadata for large files
 in Git and syncing the file contents to a configurable Git LFS server
 
-%define debug_package %{nil}
 %prep
 %setup -q
 
