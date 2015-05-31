@@ -1,14 +1,17 @@
 # keep rpm from whining
 %define debug_package %{nil}
 
+%global commit 5e47f06e08e187b8bf74c47efe96d1fa1db17f33
+%global shortcommit %(c=%{commit}; echo ${c:0:7})
+
 Name:           git-lfs
 Version:        0.5.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Git LFS is a command line extension and specification for managing large files with Git.
 
 License:        MIT
 URL:            https://github.com/jsh/%{name}
-Source0:        https://github.com/jsh/%{name}/archive/%{version}.tar.gz
+Source0:        https://github.com/jsh/%{name}/archive/%{commit}/%{name}-%{commit}.tar.gz
 
 BuildRequires:  bison
 BuildRequires:  git
@@ -29,7 +32,7 @@ Git LFS overcomes this limitation by storing the metadata for large files
 in Git and syncing the file contents to a configurable Git LFS server
 
 %prep
-%setup -q
+%setup -qn %{name}-%{commit}
 
 
 %build
@@ -50,6 +53,9 @@ script/test
 %doc LICENSE README.md
 
 %changelog
+* Sun May 31 2015 Jeffrey S. Haemer <jeffrey.haemer@gmail.com> - 0.5.1-2
+- Fix up Source0
+
 * Mon May 25 2015 Jeffrey S. Haemer <jeffrey.haemer@gmail.com> - 0.5.1-1
 - Initial RPM release
 
