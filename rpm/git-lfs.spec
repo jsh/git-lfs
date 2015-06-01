@@ -1,13 +1,13 @@
 # keep rpm from whiningG
 %define debug_package %{nil}
 
-#%global commit 04aa69bc94568720252181a98ce76069af21be3b
-#%global shortcommit %(c=%{commit}; echo ${c:0:7})
+# %%global commit 04aa69bc94568720252181a98ce76069af21be3b
+# %%global shortcommit %%(c=%%{commit}; echo ${c:0:7})
 %global commit rpm-kevin1
 
 Name:           git-lfs
 Version:        0.5.1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Git command-line extension and specification for managing large files
 
 License:        MIT
@@ -53,6 +53,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc LICENSE README.md
 
 %changelog
+* Mon Jun 01 2015 Jeffrey S. Haemer <jeffrey.haemer@gmail.com> - 0.5.1-3.centos
+- Fix most rpmlint whines
+
 * Mon Jun 01 2015 Jeffrey S. Haemer <jeffrey.haemer@gmail.com> - 0.5.1-2.centos
 - New RPM release
 
