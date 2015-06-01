@@ -1,7 +1,7 @@
 # keep rpm from whiningG
 %define debug_package %{nil}
 
-%global commit 096b4b02cb768118ec853c175740031f8817b176
+%global commit 4f80b4868454b1e139458962208779085e24e267
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           git-lfs
