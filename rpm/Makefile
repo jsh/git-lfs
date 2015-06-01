@@ -15,7 +15,6 @@ install: git-lfs man
 	install -D bin/git-lfs ${RPM_BUILD_ROOT}/usr/bin/git-lfs
 	install -d ${RPM_BUILD_ROOT}/usr/share/man/man1
 	install -m 644 man/*.1 ${RPM_BUILD_ROOT}/usr/share/man/man1
-	chmod 644 ${RPM_BUILD_ROOT}/usr/share/man/man1/*.gz
 
 man:
 	./script/man
