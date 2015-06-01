@@ -6,7 +6,7 @@
 
 Name:           git-lfs
 Version:        0.5.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Git command-line extension and specification for managing large files
 
 License:        MIT
@@ -53,6 +53,9 @@ script/test
 %doc LICENSE README.md
 
 %changelog
-* Mon May 25 2015 Jeffrey S. Haemer <jeffrey.haemer@gmail.com> - 0.5.1-1.centos
+* Mon Jun 01 2015 Jeffrey S. Haemer <jeffrey.haemer@gmail.com> - %{version}-%{release}
+- New RPM release
+
+* Mon May 25 2015 Jeffrey S. Haemer <jeffrey.haemer@gmail.com> - %{version}-%{release}
 - Initial RPM release
 
