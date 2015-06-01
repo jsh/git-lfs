@@ -1,13 +1,13 @@
-# keep rpm from whining
+# keep rpm from whiningG
 %define debug_package %{nil}
 
-%global commit 5e47f06e08e187b8bf74c47efe96d1fa1db17f33
+%global commit 096b4b02cb768118ec853c175740031f8817b176
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           git-lfs
 Version:        0.5.1
-Release:        2%{?dist}
-Summary:        Git LFS is a command line extension and specification for managing large files with Git.
+Release:        1%{?dist}
+Summary:        Git command-line extension and specification for managing large files
 
 License:        MIT
 URL:            https://github.com/jsh/%{name}
@@ -53,9 +53,6 @@ script/test
 %doc LICENSE README.md
 
 %changelog
-* Sun May 31 2015 Jeffrey S. Haemer <jeffrey.haemer@gmail.com> - 0.5.1-2
-- Fix up Source0
-
-* Mon May 25 2015 Jeffrey S. Haemer <jeffrey.haemer@gmail.com> - 0.5.1-1
+* Mon May 25 2015 Jeffrey S. Haemer <jeffrey.haemer@gmail.com> - 0.5.1-1.centos
 - Initial RPM release
 
