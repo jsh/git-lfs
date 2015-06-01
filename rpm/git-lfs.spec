@@ -1,8 +1,9 @@
 # keep rpm from whiningG
 %define debug_package %{nil}
 
-%global commit 4f80b4868454b1e139458962208779085e24e267
-%global shortcommit %(c=%{commit}; echo ${c:0:7})
+#%global commit 04aa69bc94568720252181a98ce76069af21be3b
+#%global shortcommit %(c=%{commit}; echo ${c:0:7})
+%global commit rpm-kevin1
 
 Name:           git-lfs
 Version:        0.5.1
@@ -20,7 +21,6 @@ BuildRequires:  make
 BuildRequires:  man
 BuildRequires:  ruby
 BuildRequires:  ruby-devel
-#Requires:       git
 
 %description
 By design, every git repository contains every version of every file.
@@ -42,20 +42,20 @@ make -f rpm/Makefile git-lfs man
 script/test
 
 %install
-#rm -rf $RPM_BUILD_ROOT
+rm -rf $RPM_BUILD_ROOT
 %make_install -f rpm/Makefile
 
 %files
 %defattr(-,root,root)
 %{_bindir}/*
-%{_mandir}/man1/*
+%attr(644,root,root) %{_mandir}/man1/*
 
 %doc LICENSE README.md
 
 %changelog
-* Mon Jun 01 2015 Jeffrey S. Haemer <jeffrey.haemer@gmail.com> - %{version}-%{release}
+* Mon Jun 01 2015 Jeffrey S. Haemer <jeffrey.haemer@gmail.com> - 0.5.1-2.centos
 - New RPM release
 
-* Mon May 25 2015 Jeffrey S. Haemer <jeffrey.haemer@gmail.com> - %{version}-%{release}
+* Mon May 25 2015 Jeffrey S. Haemer <jeffrey.haemer@gmail.com> - 0.5.1-1.centos
 - Initial RPM release
 
